@@ -1,52 +1,6 @@
-from base64 import b64encode
-from hashlib import blake2b
-import random
-import re
-
-from flask import Blueprint, jsonify, request, abort
-
+from shorty.custom_shorty.custom import *
 
 api = Blueprint('api', __name__)
-
-def url_valid(url):
-    """Validates a url by parsing it with a regular expression.
-    Parameters:
-    url - string representing a url to be validated.
-    Return values:
-    Boolean, indicating the validity of the url.
-    """
-    return re.match(regex, url) is not None
-
-
-def shorten(url):
-    """Shortens a url by generating a 9 byte hash, and then
-    converting it to a 12 character long base 64 url friendly string. (gets called only if both bitly and tinyurl are unavailable.)
-    Parameters:
-    url - the url to be shortened.
-    Return values:
-    String, the unique shortened url, acting as a key for the entered long url.
-    """
-    url_hash = blake2b(str.encode(url), digest_size=DIGEST_SIZE)
-
-    while url_hash in shortened:
-        url += str(random.randint(0, 9))
-        url_hash = blake2b(str.encode(url), digest_size=DIGEST_SIZE)
-
-    b64 = b64encode(url_hash.digest(), altchars=b'-_')
-    return b64.decode('utf-8')
-
-
-def bad_request(message):
-    """Takes a supplied message and attaches it to a HttpResponse with code 400.
-    Parameters:
-    message - string containing the error message.
-    Return values:
-    An object with a message string and a status_code set to 400.
-    """
-    response = jsonify({'message': message})
-    response.status_code = 400
-    return response
-
 
 @api.route('/shortlinks', methods=['POST'])
 def create_shortlink():
@@ -66,7 +20,12 @@ def create_shortlink():
     if 'url' not in request.json:
         return bad_request('Url parameter not found.')
     
+    #if 'provider' not in request.json:
+    """ if the provider is not given by the user the default tinyurl will be selected. """
+
+    
     url = request.json['url']
+    #provider = request.json['provider']
 
     if not url_valid(url):
         return bad_request('Provided url is not valid. Please try again.')
@@ -89,15 +48,3 @@ def create_shortlink_get():
     A response with an appropriate error message and a 400 code.
     """
     return bad_request("Only POST method works!")
-
-# From https://stackoverflow.com/questions/7160737/python-how-to-validate-a-url-in-python-malformed-or-not#7160778
-# Slightly modified to not use ftp.
-regex = re.compile(
-        r'^(?:http)s?://'
-        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'
-        r'localhost|'
-        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
-        r'(?::\d+)?'
-        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
-DIGEST_SIZE = 9  # 72 bits of entropy.
-shortened = {}
