@@ -57,3 +57,13 @@ def create_shortlink_get():
     """
     return bad_request(get_method_error_msg)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@api.route('/shortlinks/docs', methods=['GET'])
+def create_docs():
+  """
+  GET endpoint that provides swagger documentation for the shorty API
+  """
+  print("Sending docs...")
+  return render_template('swaggerui.html')
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
