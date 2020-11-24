@@ -12,6 +12,6 @@ class tinyurlProvider:
       timeout = 11
     )
     if response.status_code != 200:
-      return bad_request(tinyurl_error_msg)
+      return tinyurl_error_msg
     
     return response.content.decode()

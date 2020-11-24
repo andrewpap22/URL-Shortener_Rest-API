@@ -27,11 +27,11 @@ class bitlyProvider:
     }
 
     short_link_resp = requests.post('https://api-ssl.bitly.com/v4/shorten',json=bitly_data, headers=bitly_header)
-    
+
     if short_link_resp.status_code != 200:
-      return bad_request(bitly_error_msg)
+      return bitly_error_msg
 
     short_link_json = short_link_resp.json()
     short_link = short_link_json["link"]
     return short_link
-    
+
