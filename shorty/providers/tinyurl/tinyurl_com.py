@@ -1,5 +1,6 @@
 import requests
 from shorty.custom_shorty.custom import *
+from shorty.error_msgs.errors import *
 
 
 class tinyurlProvider:
@@ -11,6 +12,6 @@ class tinyurlProvider:
       timeout = 11
     )
     if response.status_code != 200:
-      return bad_request("tinyurl is not available, please try again.")
+      return bad_request(tinyurl_error_msg)
     
     return response.content.decode()

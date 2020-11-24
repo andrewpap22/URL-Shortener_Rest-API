@@ -1,7 +1,9 @@
 from shorty.providers.provider_short import *
+from shorty.error_msgs.errors import *
 
 api = Blueprint('api', __name__)
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @api.route('/shortlinks', methods=['POST'])
 def create_shortlink():
     """POST endpoint that looks for a supplied string called "url", 
@@ -16,26 +18,34 @@ def create_shortlink():
     """
 
     data = request.get_json()
-
+    
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     if not data:
-        return bad_request('Request must be provided in json format.')
+        return bad_request(data_error_msg)
     
     if 'url' not in data:
-        return bad_request('Url parameter not found.')
+        return bad_request(url_error_msg)
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     url_to_shorten = providerShort(data)
 
-    if not provider_valid(url_to_shorten.provider):
-      return bad_request('The Provided provider string is not valid. Please try again.')
+    url = url_to_shorten.url 
+    provider = url_to_shorten.provider
 
-    if not url_valid(url_to_shorten.url):
-      return bad_request('The provided url is not valid. Please try again.')
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    if not provider_valid(provider):
+      return bad_request(provider_error_msg)
+
+    if not url_valid(url):
+      return bad_request(provided_url_error_msg)
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
     final_response = url_to_shorten.short_link()
 
     return jsonify(final_response), 200
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @api.route('/shortlinks', methods=['GET'])
 def create_shortlink_get():
     """GET endpoint that provides a more useful error message for when
@@ -45,4 +55,5 @@ def create_shortlink_get():
     Return values:
     A response with an appropriate error message and a 400 code.
     """
-    return bad_request("Only POST method works!")
+    return bad_request(get_method_error_msg)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

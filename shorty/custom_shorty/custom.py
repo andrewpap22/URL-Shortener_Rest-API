@@ -66,4 +66,3 @@ regex = re.compile(
         r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 DIGEST_SIZE = 9  # 72 bits of entropy.
 shortened = {}
-

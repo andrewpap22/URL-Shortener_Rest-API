@@ -2,6 +2,7 @@ import requests
 import json
 
 from shorty.custom_shorty.custom import *
+from shorty.error_msgs.errors import *
 
 
 class bitlyProvider:
@@ -26,6 +27,9 @@ class bitlyProvider:
     }
 
     short_link_resp = requests.post('https://api-ssl.bitly.com/v4/shorten',json=bitly_data, headers=bitly_header)
+    
+    if short_link_resp.status_code != 200:
+      return bad_request(bitly_error_msg)
 
     short_link_json = short_link_resp.json()
     short_link = short_link_json["link"]
