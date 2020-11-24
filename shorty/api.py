@@ -1,4 +1,4 @@
-from shorty.custom_shorty.custom import *
+from shorty.providers.provider_short import *
 
 api = Blueprint('api', __name__)
 
@@ -14,29 +14,27 @@ def create_shortlink():
     A response signifying success or error.
     Successes contain the shortened url and the original one, errors contain an appropriate message.
     """
-    if not request.json:
-        return bad_request('Url must be provided in json format.')
+
+    data = request.get_json()
+
+    if not data:
+        return bad_request('Request must be provided in json format.')
     
-    if 'url' not in request.json:
+    if 'url' not in data:
         return bad_request('Url parameter not found.')
-    
-    #if 'provider' not in request.json:
-    """ if the provider is not given by the user the default tinyurl will be selected. """
 
-    
-    url = request.json['url']
-    #provider = request.json['provider']
+    url_to_shorten = providerShort(data)
 
-    if not url_valid(url):
-        return bad_request('Provided url is not valid. Please try again.')
+    if not provider_valid(url_to_shorten.provider):
+      return bad_request('The Provided provider string is not valid. Please try again.')
 
-    shortened_url = shorten(url)
-    shortened[shortened_url] = url
+    if not url_valid(url_to_shorten.url):
+      return bad_request('The provided url is not valid. Please try again.')
     
-    return jsonify({
-        'url':url,
-        'link':shortened_url
-    }), 200
+    final_response = url_to_shorten.short_link()
+
+    return jsonify(final_response), 200
+
 
 @api.route('/shortlinks', methods=['GET'])
 def create_shortlink_get():

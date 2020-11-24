@@ -17,6 +17,13 @@ def url_valid(url):
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def provider_valid(provider):
+    providers = ["bitly", "tinyurl"]
+    if provider in providers:
+      return True
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def shorten(url):
     """Shortens a url by generating a 9 byte hash, and then
     converting it to a 12 character long base 64 url friendly string. (gets called only if both bitly and tinyurl are unavailable.)
