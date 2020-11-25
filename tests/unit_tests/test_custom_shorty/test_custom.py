@@ -8,6 +8,9 @@ URL_WITHOUT_HTTP = "www.example.com"
 INVALID_URL = "qwerty"
 URL_INVALID_PROTOCOL = "qwerty://www.google.com/"
 
+VALID_PROVIDER = "tinyurl"
+NON_VALID_PROVIDER = "qwerty"
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def test_url_valid():
   """
@@ -70,4 +73,26 @@ def test_url_invalid_protocol():
   assert not res
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# na tsekarw twra tin sunarthsh provider validation oti douleuei koble.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def test_provider_valid_justifiable_provider():
+  """
+  I) Pass the valid provider to the function
+  """
+  res = provider_valid(VALID_PROVIDER)
+  """
+  II) Check the result
+  """
+  assert res
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def test_provider_valid_non_justifiable_provider():
+  """
+  I) Pass the non valid provider to the function
+  """
+  res = provider_valid(NON_VALID_PROVIDER)
+  """
+  II) Check the result
+  """
+  assert not res
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
