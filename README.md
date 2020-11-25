@@ -20,37 +20,163 @@ allow the consumer to specify the provider if they wish to do so.
 
 <ul>
   <li>
-    <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/dataset">📂 Dataset</a>
+    <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty">📂 shorty</a>
     <ul>
       <li>
-        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/dataset/camera_specs/2013_camera_specs">📂 camera_specs</a>
+        <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/custom_shorty">📂 custom_shorty</a>
+        <ul>
+          <li>
+            <p>📄 custom.py</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/error_msgs">📂 error_msgs</a>
+        <ul>
+          <li>
+            <p>📄 errors.py</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/providers">📂 providers</a>
+        <ul>
+          <li>
+            <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/providers/bitly">📂 bitly</a>
+            <ul>
+              <li>
+                <p>📄 bit_ly.py</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/providers/tinyurl">📂 tinyurl</a>
+            <ul>
+              <li>
+                <p>📄 tinyurl_com.py</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>📄 provider_short.py</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/static">📂 static</a>
+        <ul>
+          <li>
+            <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/static/css">📂 css</a>
+            <ul>
+              <li>
+                <p>📄 swagger-ui.css</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/static/img">📂 img</a>
+            <ul>
+              <li>
+                <p>📄 favicon-16x16.png</p>
+              </li>
+              <li>
+                <p>📄 favicon-32x32.png</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/static/js">📂 js</a>
+            <ul>
+              <li>
+                <p>📄 swagger-ui-bundle.js</p>
+              </li>
+              <li>
+                <p>📄 swagger-ui-standalone-preset.js</p>
+              </li>
+              <li>
+                <p>📄 swagger-ui.js</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>📄 openapi2.json</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/shorty/templates">📂 templates</a>
+        <ul>
+          <li>
+            <p>📄 swaggerui.html</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>📄 api.py</p>
+      </li>
+      <li>
+        <p>📄 app.py</p>
       </li>
     </ul>
-    <p>📄 sigmod_large_labelled_dataset.csv</p>
-    <p>📄 sigmod_medium_labelled_dataset.csv</p>
   </li>
   <li>
-    <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src">📂 src</a>
+    <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/tests">📂 tests</a>
     <ul>
       <li>
-        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src/dot-C_files">📂 dot-C_files</a>
+        <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/tests/functional_tests">📂 functional_tests</a>
+        <ul>
+          <li>
+            <p>📄 conftest.py</p>
+          </li>
+          <li>
+            <p>📄 test_shorty_api.py</p>
+          </li>
+        </ul>
       </li>
       <li>
-        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src/external">📂 external</a>
-      </li>
-      <li>
-        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src/headers">📂 headers</a>
-      </li>
-      <li>
-        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src/test">📂 test</a>
+        <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/tests/unit_tests">📂 unit_tests</a>
+        <ul>
+          <li>
+            <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/tests/unit_tests/test_custom_shorty">📂 test_custom_shorty</a>
+            <ul>
+              <li>
+                <p>📄 test_custom.py</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/tests/unit_tests/test_providers">📂 test_providers</a>
+            <ul>
+              <li>
+                <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/tests/unit_tests/test_providers/test_bitly">📂 test_bitly</a>
+                <ul>
+                  <li>
+                    <p>📄 test_bit_ly.py</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://github.com/andrewpap22/Plum_Software-Engineer-Task/tree/shorty/tests/unit_tests/test_providers/test_tinyurl">📂 test_tinyurl</a>
+                <ul>
+                  <li>
+                    <p>📄 test_tinyurl_com.py</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>📄 test_provider_short.py</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </li>
     </ul>
-    <p>📄 makefile</p>
-    <p>📄 project.c</p>
-    <p>📄 output.csv</p>
-  </li>
-  <li>
-    <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/valgrind_output">📂 valgrind_output</a>
+  <li><p>🐳 Dockerfile</p></li>
+  <li><p>📄 LICENSE</p></li>
+  <li><p>📄 README.md</p></li>
+  <li><p>📄 requirements.txt</p></li>
+  <li><p>📄 run.py</p></li>
+  <li><p>💾 virtual_enviroment.sh</p></li>
   </li>
 </ul>
 
@@ -88,6 +214,54 @@ For example:
 You are free to decide how to pick between the providers if one is not requested and what
 your fallback strategy is in case your primary choice fails. Your endpoint needs to return
 a JSON response with a sensible HTTP status in case of errors or failures.
+
+<hr>
+
+## Details ✍️
+
+So, `shorty` shortens the url given as a request using as a `default` provider the **tinyurl** provider. If the user decides to choose the provider though he's free to do so, and if both providers are unavailable for any reason, shorty uses a custom built in short() function to shorten the url requested. <br>
+`Example:`
+
+```json
+{
+  "url":"https://www.example.com/",
+  "provider":"bitly"
+}
+```
+
+`Shorty` checks for every possible mistake the user might do and provides a useful message for the user alongside an appropriate HTTP status code. <br>
+`An example of a possible error message:`
+
+```json
+{
+    "Error": "[!] Request must be provided in json format.",
+    "Usage": [
+        {
+          "url":"https://www.example.com/",
+          "provider":"bitly"
+        },
+        {
+            "url":"http://example.com/",
+            "provider":"tinyurl"
+        },
+        {
+            "url":"http://example.com"
+        }
+    ]
+}
+```
+
+After all `shorty` responds back if everything's ok. <br>
+`Response Example`
+
+```json
+{
+    "url": "https://example.com",
+    "link": "https://bit.ly/8h1bka"
+}
+```
+
+<hr>
 
 What you need to do
 -------------------
