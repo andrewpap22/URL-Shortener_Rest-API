@@ -39,7 +39,16 @@ def shorten(url):
         url_hash = blake2b(str.encode(url), digest_size=DIGEST_SIZE)
 
     b64 = b64encode(url_hash.digest(), altchars=b'-_')
-    return b64.decode('utf-8')
+
+    string_b64 = b64.decode('utf-8')
+ 
+    # append http for testing purposes.
+    if string_b64[:4] != 'http':
+        string_b64 = 'http://' + string_b64
+ 
+    return (string_b64)
+
+    #return b64.decode('utf-8')
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
