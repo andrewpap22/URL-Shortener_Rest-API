@@ -1,6 +1,19 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 data_error_msg = {
-    "Error": "[!] Request must be provided in json format."
+    "Error": "[!] Request must be provided in json format.",
+    "Usage": [
+        {
+          "url":"https://www.example.com/",
+          "provider":"bitly"
+        },
+        {
+            "url":"http://example.com/",
+            "provider":"tinyurl"
+        },
+        {
+            "url":"http://example.com"
+        }
+    ]
 }
 
 url_error_msg = {
