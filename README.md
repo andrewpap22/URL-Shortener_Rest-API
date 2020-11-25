@@ -14,6 +14,48 @@ consistent APIs for the rest of the system to consume. Each service should be ab
 pick sensible defaults (and fallbacks, if, for example, a provider is unavailable) or
 allow the consumer to specify the provider if they wish to do so.
 
+<hr>
+
+## 📁 Project File Structure
+
+<ul>
+  <li>
+    <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/dataset">📂 Dataset</a>
+    <ul>
+      <li>
+        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/dataset/camera_specs/2013_camera_specs">📂 camera_specs</a>
+      </li>
+    </ul>
+    <p>📄 sigmod_large_labelled_dataset.csv</p>
+    <p>📄 sigmod_medium_labelled_dataset.csv</p>
+  </li>
+  <li>
+    <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src">📂 src</a>
+    <ul>
+      <li>
+        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src/dot-C_files">📂 dot-C_files</a>
+      </li>
+      <li>
+        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src/external">📂 external</a>
+      </li>
+      <li>
+        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src/headers">📂 headers</a>
+      </li>
+      <li>
+        <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/src/test">📂 test</a>
+      </li>
+    </ul>
+    <p>📄 makefile</p>
+    <p>📄 project.c</p>
+    <p>📄 output.csv</p>
+  </li>
+  <li>
+    <a href="https://github.com/andrewpap22/Project_Iwannidhs_Fall-2020/tree/master/valgrind_output">📂 valgrind_output</a>
+  </li>
+</ul>
+
+<hr>
+
 Mission
 -------
 
