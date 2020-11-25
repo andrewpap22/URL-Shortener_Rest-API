@@ -184,7 +184,20 @@ class TestShortyApi:
     assert response.status_code == HTTP_ERROR_CODE
     assert response.get_json() == {
       "message": {
-        "Error": "[!] Request must be provided in json format."
+        "Error": "[!] Request must be provided in json format.",
+        "Usage": [
+            {
+                "provider": "bitly",
+                "url": "https://www.example.com/"
+            },
+            {
+                "provider": "tinyurl",
+                "url": "http://example.com/"
+            },
+            {
+                "url": "http://example.com"
+            }
+        ]
       }
     }
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
