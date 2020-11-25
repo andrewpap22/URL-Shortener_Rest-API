@@ -270,6 +270,76 @@ What you need to do
 2. Build the `POST /shortlinks` endpoint. We've provided a skeleton API using `flask`.
 3. Write some tests. We've provided a test blueprint using `pytest`.
 
+<hr>
+
+## What I did 👨‍💻
+
+<ol>
+  <li>
+    <p>
+      Implemented the <b>POST /shortlinks</b> endpoint where the basic functionallity of the API resides.
+    </p>
+  </li>
+  <li>
+    <p>
+      Implemented the <b>GET /shortlinks</b> endpoint where the user gets informed with a usefull error message, that only POST method works with the API.
+    </p>
+  </li>
+  <li>
+    <p>
+      Implemented the <b>GET /shortlinks/docs</b> endpoint where, you can find rendered an HTML page, where basically resides a swaggerUI documentation for the API.
+    </p>
+  </li>
+  <li>
+    <p>
+      Implemented both API providers with the user functionallity to choose whoever he/she wants and if none is chose then a default one handles the request, as well as a custom short() function where the requested url can be shortened, if for any reason the providers fail.
+    </p>
+  </li>
+  <li>
+    <p>
+      Implemented both <b>integration (functional)</b> and <b>unit</b> tests, for whatever was needed to be tested in the API.
+    </p>
+  </li>
+</ol>
+
+## Cool, How to use the API? 🤖
+
+You can run the API locally either with `python virtual enviroment` or by building 👷 the provided `docker` image.
+
+### To run with `python virtual enviroment` :
+
+Open up a terminal and run the provided bash script inside the `root directory` of the project: 
+
+```bash
+$ ./virtual_enviroment.sh
+```
+
+### To run with `docker`:
+
+Open up a terminal again inside the `root directory` of the project and run the following: 
+
+```bash
+# 1. To build the image
+$ sudo docker build --tag shorty:latest . 
+
+#2. To run the image
+$ sudo docker run -p 5000:5000 shorty
+```
+
+## 🎉 Alright! 
+
+<p>Now, after running the API successfully, you can install <a href="https://linuxize.com/post/how-to-install-postman-on-ubuntu-20-04/">Postman</a> on your machine and play with the API, <b>by posting your request at the /shortlinks endpoint</b>! Also you can open up a browser and type in: <a href="http://localhost:5000/shortlinks/docs">localhost</a> to check the <b>swaggerUI documentation</b> interface!</p>
+
+## 🧪 Tests? 
+
+Finally you can check `shorty's` validity by going into the `tests` directory and by opening up a terminal inside that directory and provide the following command in the workink shell:
+
+```bash
+$ pytest -v
+```
+
+<hr>
+
 Deliverable
 -----------
 
@@ -294,3 +364,8 @@ Disclaimer
 ----------
 
 We will not use any of this code for any of Plum's applications.
+
+<hr>
+
+## Thank you! 😃 
+:copyright: 2020-2021
