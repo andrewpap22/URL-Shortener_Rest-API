@@ -96,3 +96,18 @@ def test_provider_valid_non_justifiable_provider():
   """
   assert not res
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""
+From this point and on we're going to test the custom shorten() function for a given valid url.
+"""
+def test_shorten():
+  """
+  I) Provide a valid url
+  """
+  res = shorten(VALID_URL)
+  """
+  II) Check the result
+  """
+  assert res.startswith('http://')
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
