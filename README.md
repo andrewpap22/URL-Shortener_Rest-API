@@ -1,19 +1,6 @@
 Software Engineer Task
 ======================
 
-At Plum, we have a lot of services that need to work together to deliver our product.
-Many of these services talk to third-party providers to perform their operations – for
-example moving money, performing background checks, sending messages or emails, etc.
-
-In a lot of cases - due to business, compliance or technical reasons - we need to support
-multiple third-party providers for the same operation, some of which have wildy different
-specifications, ranging from simple REST APIs to SOAP.
-
-To maintain our sanity, we abstract these third-parties behind interfaces and expose
-consistent APIs for the rest of the system to consume. Each service should be able to
-pick sensible defaults (and fallbacks, if, for example, a provider is unavailable) or
-allow the consumer to specify the provider if they wish to do so.
-
 <hr>
 
 ## 📁 Project File Structure
@@ -268,7 +255,7 @@ What you need to do
 
 1. Create a Python env (using Python 3.6+) and install the requirements.
 2. Build the `POST /shortlinks` endpoint. We've provided a skeleton API using `flask`.
-3. Write some tests. We've provided a test blueprint using `pytest`.
+3. Write some tests using `pytest`.
 
 <hr>
 
@@ -298,6 +285,11 @@ What you need to do
   <li>
     <p>
       Implemented both <b>integration (functional)</b> and <b>unit</b> tests, for whatever was needed to be tested in the API.
+    </p>
+  </li>
+   <li>
+    <p>
+      Provided a <b>Dockerfile</b> as well as a <b>bash script</b> to run the virtual enviroment.
     </p>
   </li>
 </ol>
@@ -360,12 +352,7 @@ Resources
 3. `virtualenvwrapper`: https://virtualenvwrapper.readthedocs.io/en/latest/
 4. `HTTP statuses`: https://httpstatuses.com/
 
-Disclaimer
-----------
-
-We will not use any of this code for any of Plum's applications.
-
 <hr>
 
 ## Thank you! 😃 
-:copyright: 2020-2021
+:copyright: 2020-2021, `Andrew Pappas`
