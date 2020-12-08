@@ -1,0 +1,84 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Shorty",
+    "description": "This is a url shortener microservice called shorty, which supports two URL shortening providers: bit.ly and tinyurl.com. It also supports its own shortening method in case its providers are unavailable for any reason. It is written in python using the flask micro web framework. To run the application you can use the bash script which will run a python virtual enviroment on your machine or you can use the docker image for this particular API. <br /> 1) Using the virtual enviroment script: $ ./virtual_enviroment.sh <br /> 2) Using the dockerfile: <br /> $ sudo docker build --tag shorty:latest . <-- notice the dot at the end <br /> $ sudo docker run -p 5000:5000 shorty",
+    "contact": {
+      "email": "andrewpap1997@gmail.com"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "version": "Latest"
+  },
+  "paths": {
+    "/shortlinks": {
+      "post": {
+        "tags": [
+          "Shorty"
+        ],
+        "description": "Returns the shortened version of the requested url.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "description": "The original url to be shorted",
+            "schema": {
+              "type": "object",
+              "example": {
+                "url": "https://www.example.com"
+              }
+            }
+          },
+          {
+            "in": "query",
+            "name": "provider",
+            "required": false,
+            "description": "The name of the provider to short the url (optional)",
+            "schema": {
+              "type": "object",
+              "example": {
+                "provider": "bitly"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessfully returned the shorted url alongside the original one",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "url": "https://www.example.com/",
+                    "link": "bit.ly/8hlbka"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "Error": "[!] url parameter missing",
+                    "Usage": {
+                      "url": "[valid_url_here]",
+                      "provider": "[optional]"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

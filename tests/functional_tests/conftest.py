@@ -11,7 +11,7 @@ root = os.path.join(os.path.dirname(__file__))
 package = os.path.join(root, '..')
 sys.path.insert(0, os.path.abspath(package))
 
-from shorty.app import create_app  # noqa
+from shorty.app import *
 
 
 class TestResponseClass(Flask.response_class):
@@ -73,3 +73,7 @@ def client(app, request):
 @pytest.fixture(scope='function')
 def get(client):
     return humanize_werkzeug_client(client.get)
+
+@pytest.fixture(scope='function')
+def post(client):
+    return humanize_werkzeug_client(client.post)
